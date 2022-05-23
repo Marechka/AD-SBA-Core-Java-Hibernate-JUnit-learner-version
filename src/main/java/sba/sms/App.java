@@ -17,21 +17,22 @@ import java.util.Scanner;
  * where students can register for courses, and view the course assigned to them.
  *<br />
  * App uses <br />
- * Initialize dummy data: {@link CommandLine#addData()} <br />
+ * Initialize dummy data: {@link //CommandLine#addData()} <br />
  * Two models: {@link Student} & {@link Course} <br />
  * Two services: {@link StudentService} & {@link CourseService}
  *
  * @author  Jafer Alhaboubi
  * @since sba-core-java-hibernate-junit 1.0
  */
+
 @Log
 public class App {
-    static final  StudentService studentService = new StudentService();
-    static final  CourseService courseService = new CourseService();
+   static final  StudentService studentService = new StudentService();
+   static final  CourseService courseService = new CourseService();
 
     public static void main(String[] args) {
 
-        CommandLine.addData();
+       CommandLine.addData();
 
         Scanner input = new Scanner(System.in);
         int userInput;
