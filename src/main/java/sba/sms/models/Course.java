@@ -21,11 +21,11 @@ public class Course {
     int id;
 
     @NonNull
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     String name;
 
     @NonNull
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     String instructor;
 
     public Course(int id, @NonNull String name, @NonNull String instructor) {

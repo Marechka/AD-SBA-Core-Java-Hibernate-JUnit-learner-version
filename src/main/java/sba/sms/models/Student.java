@@ -16,18 +16,18 @@ import java.util.*;
 @Table(name = "student")
 public class Student {
     @Id
-    @Column(name = "email", length = 50)
+    @Column(nullable = false, name = "email", length = 50)
     String email;
 
     @NonNull
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     String name;
 
     @NonNull
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     String password;
 
-    public Student(@NonNull String email, @NonNull String name, @NonNull String password) {
+    public Student(@NonNull String email, @NonNull String name,  @NonNull String password) {
         this.email = email;
         this.name = name;
         this.password = password;

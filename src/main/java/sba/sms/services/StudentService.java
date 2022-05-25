@@ -96,8 +96,14 @@ public class StudentService implements StudentI {
             tx = s.beginTransaction();
             Student student = s.get(Student.class, email);
             Course course = s.get(Course.class,courseId);
-            course.addStudent(student);
-            s.merge(course);
+            List<Course> curCourses = getStudentCourses(email);
+            if (curCourses.contains(course)) {
+                System.out.println("Already enrolled");
+            } else {
+                course.addStudent(student);
+                s.merge(course);
+                System.out.printf("successfully register %s to %s%n", student.getName(), course.getName());
+            }
             tx.commit();
         } catch (HibernateException exception) {
             if (tx!=null) tx.rollback();
